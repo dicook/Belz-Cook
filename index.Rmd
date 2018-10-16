@@ -1,7 +1,7 @@
 ---
 title: "Human vs computer: when visualising data, who wins?"
 author: "<br><br> Di Cook <br><br> Monash University"
-date: "[bit.ly/belz-cook](bit.ly/belz-cook)  <br><br>  <br><br>Oct 16, 2018"
+date: "Belz Lecture, SSA-Victoria <br><br> <br><br>Oct 16, 2018   <br><br><br><br>  *Slides linked to [http://www.dicook.org](http://www.dicook.org)*"
 output:
   xaringan::moon_reader:
     css: ["default", "myremark.css"]
@@ -29,7 +29,7 @@ opts_chunk$set(
   fig.width = 12, 
   fig.height = 11, 
   fig.show = 'hold', 
-  cache = TRUE, 
+  cache = FALSE, 
   external = TRUE, 
   dev = 'svglite'
 )
@@ -88,9 +88,14 @@ ggplot(df, aes(x=fitted, y=resid)) +
 ## What?
 ]
 .right-column[
-- Neural network model, 
-- Includes a transformation (convolution) stage,
+
+- Neural network model 
+- Includes a transformation (convolution) stage
 - Demonstrated success with image classification. 
+
+![](images/image_classification.png)
+
+*Source: [Abdellatif Abdelfattah](https://medium.com/@tifa2up/image-classification-using-deep-neural-networks-a-beginner-friendly-approach-using-tensorflow-94b0a090ccd4)*
 ]
 
 ---
@@ -203,6 +208,7 @@ The [keras](https://keras.rstudio.com) package in R, interfaces to python softwa
 background-image: url(images/training.png)
 background-size: 100%
 
+*Source: Shuofan Zhang*
 ---
 
 background-image: url(images/whatdidyousay.gif)
@@ -254,6 +260,13 @@ Wickham et al (2015)
 [Buja et al (2009)](http://rsta.royalsocietypublishing.org/content/367/1906/4361) ideas, [Majumder et al (2013)](https://www.tandfonline.com/doi/abs/10.1080/01621459.2013.808157) validation
 
 ]
+
+---
+
+background-image: url(images/diaghm.png)
+background-size: 100%
+
+*Source: Shuofan Zhang*
 
 ---
 .left-column[
@@ -359,12 +372,16 @@ In the Turk study 0/19 observers chose plot 18. The estimated p-value is 1. It i
 ## Database
 ## Try it
 ## Validation
+
+*[Majumder et al (2013)](https://www.tandfonline.com/doi/abs/10.1080/01621459.2013.808157)*
+
 ]
 .right-column[
 
 ![](images/majumder1.png)
 
 ![](images/majumder2.png)
+
 
 ]
 ---
@@ -512,7 +529,7 @@ mydsdz %>% group_by(dataset) %>%
 
 ```{r fig.height=7}
 library(sawfish)
-fl <- find_files("https://www4.stat.ncsu.edu/~stefanski/nsf_supported/hidden_images/correct_model_files/", "txt")
+fl <- find_files("https://www4.stat.ncsu.edu/~stefanski/nsf_supported/hidden_images/box_quote_files/", "txt")
 d <- matrix(scan(paste0(attr(fl, "base"), fl[1])), ncol=5, byrow=TRUE)
 colnames(d) <- c("y", paste0("x",1:4))
 d <- as_tibble(d)
@@ -534,12 +551,12 @@ ggplot(fit_aug, aes(x=.fitted, y=.resid)) + geom_point()
 ```
 
 ---
-# To the future
+# To the future `r icon::fa_rocket()`
 
 - Model checking may be systematic enough to automate
 - Expand the computer model with simulations of all sorts of departures from no relationship
-- Design new simulations of data to build computer models for problems like high throughput genomics problems
 - The lineup protocol, from visual inference, provides a way to check and validate the models - may need to build up more human subject evaluations
+- Extend to new areas like high throughput genomics problems
 
 ---
 
@@ -557,7 +574,7 @@ class: inverse
 
 Contact: [`r icon::fa_envelope()`](http://www.dicook.org) dicook@monash.edu, [`r icon::fa_twitter()`](https://twitter.com/visnut) visnut, [`r icon::fa_github()`](https://github.com/dicook) dicook
 
-.footnote[Slides made with Rmarkdown, xaringan package by Yihui Xie, and lorikeet theme using the [ochRe package](https://github.com/ropenscilabs/ochRe). Available at [github.com/dicook/Belz-Cook](https://github.com/dicook/Belz-Cook).
+.footnote[Slides made with Rmarkdown, xaringan package by Yihui Xie, and lorikeet theme using the [ochRe package](https://github.com/ropenscilabs/ochRe). Available at [github.com/dicook/Belz-Cook](https://github.com/dicook/Belz-Cook).]
 
 ---
 # Further reading
